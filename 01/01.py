@@ -1,14 +1,17 @@
+# --- Part 1 ---
+
 def load_data():
     with open('input.txt', mode="r") as f:
-        #lines = f.readlines()
-        #lines = f.readline()
         lines = f.read().splitlines()
     return lines
 
+# Load the data from the input file
 calorie_items = load_data()
-#print(calorie_items)
 
+# Create an empty list to keep track of the total amounts
 totals = []
+
+# Keep track of the current sum
 currentSum = 0
 
 for element in calorie_items:
@@ -20,7 +23,18 @@ for element in calorie_items:
         currentSum = 0
         continue
 
-#print(totals)
+
 max_calorie_value = max(totals)
 print("The Elf carrying the most Calories are:")
 print(max_calorie_value)
+
+# --- PART 2 ---
+
+# Sort the totals list in ascending order
+totals.sort()
+
+# Keep only the three largest sums
+totals = totals[-3:]
+
+# Return the sum of the totals list
+print(sum(totals))
