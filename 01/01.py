@@ -14,17 +14,21 @@ totals = []
 # Keep track of the current sum
 currentSum = 0
 
+# Iterate over the elements in the calorie_items list
 for element in calorie_items:
+    # If the element is not an empty string, add its integer value to the current sum
     if element != '':
         int_value = int(element)
         currentSum += int_value
+    # If the element is an empty string, append the current sum to the totals list and reset the current sum to 0
     else:
         totals.append(currentSum)
         currentSum = 0
-        continue
 
-
+# Get the maximum value in the totals list
 max_calorie_value = max(totals)
+
+# Print the maximum value
 print("The Elf carrying the most Calories are:")
 print(max_calorie_value)
 
